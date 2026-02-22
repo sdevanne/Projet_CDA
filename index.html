@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAB+ — Accueil</title>
+  <meta name="description" content="DAB+ : mini-site étudiant sur les distributeurs automatiques de billets, avec simulation de retrait multi-devises." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="logo" href="index.html" aria-label="Retour à l'accueil">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">DAB<span class="logo-plus">+</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
+
+      <div id="navlinks" class="nav-links">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="atm.html">ATM</a>
+        <a href="formulaire.html">Formulaire</a>
+        <a href="tableau.html">Tableau</a>
+        <a href="galerie.html">Galerie</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>DAB+ — Distributeur pédagogique</h1>
+      <p>
+        Mini-site étudiant autour des distributeurs : une simulation de retrait multi-devises (billets + pièces),
+        un formulaire et un tableau d’historique.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="atm.html">Lancer la simulation</a>
+        <a class="btn" href="tableau.html">Voir l’historique</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <div class="hero-card-top">
+        <div class="chip"></div>
+        <div class="signal"></div>
+      </div>
+      <div class="hero-card-body">
+        <div class="hero-card-line"></div>
+        <div class="hero-card-line short"></div>
+        <div class="hero-card-line"></div>
+        <div class="hero-card-line short"></div>
+      </div>
+      <div class="hero-card-bottom">
+        <span class="pill">EUR</span>
+        <span class="pill">USD</span>
+        <span class="pill">GBP</span>
+        <span class="pill">JPY</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card col-6">
+      <h2>Fonctions</h2>
+      <ul class="list">
+        <li>Simulation de retrait (minimum d’unités)</li>
+        <li>Choix de la devise et des coupures</li>
+        <li>Formulaire complet</li>
+        <li>Historique (tableau)</li>
+        <li>Galerie (12 images)</li>
+      </ul>
+    </article>
+
+    <article class="card col-6">
+      <h2>Étapes d’un retrait</h2>
+      <ul class="list">
+        <li>Choisir la devise et le montant</li>
+        <li>Vérifier les frais et la disponibilité</li>
+        <li>Distribution des billets/pièces</li>
+        <li>Ticket (récapitulatif)</li>
+      </ul>
+    </article>
+
+    <article class="card col-12">
+      <h2>À propos</h2>
+      <p class="muted">
+        Site fictif réalisé dans un cadre pédagogique. Les données saisies dans le formulaire ne sont pas stockées.
+      </p>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2026 — DAB+ (site fictif pédagogique)</small>
+  </div>
+</footer>
+</body>
+</html>

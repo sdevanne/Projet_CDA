@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAB+ — Formulaire</title>
+  <meta name="description" content="Formulaire DAB : préférences et déclaration d’incident." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="logo" href="index.html" aria-label="Retour à l'accueil">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">DAB<span class="logo-plus">+</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
+
+      <div id="navlinks" class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="atm.html">ATM</a>
+        <a href="formulaire.html" aria-current="page">Formulaire</a>
+        <a href="tableau.html">Tableau</a>
+        <a href="galerie.html">Galerie</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>Formulaire</h1>
+    <p class="muted">Profil, préférences et déclaration.</p>
+  </section>
+
+  <section class="card">
+    <form id="dabForm" action="#" method="post">
+      <div class="field">
+        <label for="prenom">Prénom</label>
+        <input id="prenom" name="prenom" type="text" required />
+      </div>
+
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input id="nom" name="nom" type="text" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="field">
+        <label for="tel">Téléphone</label>
+        <input id="tel" name="tel" type="tel" />
+      </div>
+
+      <div class="field">
+        <label for="age">Âge</label>
+        <input id="age" name="age" type="number" min="10" max="99" />
+      </div>
+
+      <div class="field">
+        <label for="date">Date</label>
+        <input id="date" name="date_operation" type="date" />
+      </div>
+
+      <div class="field">
+        <label for="heure">Heure</label>
+        <input id="heure" name="heure_operation" type="time" />
+      </div>
+
+      <div class="field">
+        <label for="lieu">Lieu (auto-complétion)</label>
+        <input id="lieu" name="lieu" list="lieux" />
+        <datalist id="lieux">
+          <option value="Centre-ville"></option>
+          <option value="Gare"></option>
+          <option value="Campus"></option>
+          <option value="Centre commercial"></option>
+          <option value="Aéroport"></option>
+        </datalist>
+      </div>
+
+      <div class="field">
+        <label for="devise">Devise</label>
+        <select id="devise" name="devise">
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+      </div>
+
+      <fieldset class="fieldset">
+        <legend>Type d’opération</legend>
+        <div class="radios">
+          <label><input type="radio" name="type_operation" value="retrait" required /> Retrait</label>
+          <label><input type="radio" name="type_operation" value="solde" /> Solde</label>
+          <label><input type="radio" name="type_operation" value="autre" id="opAutre" /> Autre</label>
+        </div>
+
+        <div id="opAutreBox" class="field hidden" style="margin-top:10px;">
+          <label for="opAutreTxt">Précise l’opération</label>
+          <input id="opAutreTxt" name="operation_autre" type="text" placeholder="Ex : dépôt / changement / ...">
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="montant">Montant</label>
+        <input id="montant" name="montant" type="number" step="0.01" min="0" />
+      </div>
+
+      <fieldset class="fieldset">
+        <legend>Incident(s)</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="incident[]" value="carte" /> Carte retenue</label>
+          <label><input type="checkbox" name="incident[]" value="billets" /> Billets non délivrés</label>
+          <label><input type="checkbox" name="incident[]" value="recu" /> Reçu absent</label>
+          <label><input type="checkbox" name="incident[]" value="autre" id="incAutre" /> Autre</label>
+        </div>
+
+        <div id="incAutreBox" class="field hidden" style="margin-top:10px;">
+          <label for="incAutreTxt">Précise l’incident</label>
+          <input id="incAutreTxt" name="incident_autre" type="text" placeholder="Ex : écran bloqué / montant incorrect / ...">
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="stress">Niveau de stress (1–10)</label>
+        <input id="stress" name="stress" type="range" min="1" max="10" value="5" />
+      </div>
+
+      <div class="field">
+        <label for="theme">Couleur préférée</label>
+        <input id="theme" name="theme" type="color" value="#2563eb" />
+      </div>
+
+      <div class="field">
+        <label for="message">Détails</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="piece">Pièce jointe</label>
+        <input id="piece" name="piece" type="file" accept="image/*,.pdf" />
+      </div>
+
+      <div class="field">
+        <label for="contact">Préférence de contact</label>
+        <select id="contact" name="contact">
+          <option value="email">Email</option>
+          <option value="tel">Téléphone</option>
+          <option value="aucun">Aucune</option>
+        </select>
+      </div>
+
+      <div class="checkline">
+        <input id="rgpd" name="rgpd" type="checkbox" required />
+        <label for="rgpd">J’accepte les conditions</label>
+      </div>
+
+      <div class="row">
+        <button class="btn primary" type="submit">Envoyer</button>
+        <button class="btn" type="reset">Réinitialiser</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Toast (créé/affiché en JS) -->
+  <div id="formToast" class="toast hidden" role="status" aria-live="polite">
+    <p class="toast-title">Envoi simulé ✅</p>
+    <p class="toast-text">Les données ne sont pas stockées. C’est un projet pédagogique.</p>
+    <div class="toast-actions">
+      <button id="toastClose" class="btn" type="button">OK</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2026 — DAB+ (site fictif pédagogique)</small>
+  </div>
+</footer>
+</body>
+</html>

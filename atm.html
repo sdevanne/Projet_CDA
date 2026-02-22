@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAB+ — ATM</title>
+  <meta name="description" content="Simulation ATM : calcul du minimum de billets/pièces selon la devise et les coupures." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="logo" href="index.html" aria-label="Retour à l'accueil">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">DAB<span class="logo-plus">+</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
+
+      <div id="navlinks" class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="atm.html" aria-current="page">ATM</a>
+        <a href="formulaire.html">Formulaire</a>
+        <a href="tableau.html">Tableau</a>
+        <a href="galerie.html">Galerie</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>ATM — Simulation de retrait</h1>
+    <p class="muted">Clavier + ticket + calcul du minimum d’unités (billets + pièces, centimes inclus quand applicable).</p>
+  </section>
+
+  <section class="atm-layout" aria-label="Simulation ATM">
+    <aside class="card">
+      <h2>Réglages</h2>
+
+      <div class="field">
+        <label for="atmCurrency">Devise</label>
+        <select id="atmCurrency" name="atmCurrency">
+          <option value="EUR" selected>EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Coupures actives</label>
+        <div id="denomsChips" class="chips" aria-label="Coupures actives"></div>
+      </div>
+
+      <div class="checkline">
+        <input id="atmForceDP" type="checkbox" />
+        <label for="atmForceDP">Calcul garanti (DP)</label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <button class="btn" type="button" id="btnExample">Exemple</button>
+        <button class="btn danger" type="button" id="btnClear">Effacer</button>
+      </div>
+    </aside>
+
+    <section class="atm-device" aria-label="ATM">
+      <div class="atm-screen" role="region" aria-label="Écran">
+        <div class="atm-top">
+          <div class="atm-brand">
+            <span class="dot" aria-hidden="true"></span>
+            <span>DAB+ ATM</span>
+          </div>
+          <span id="atmStatus" class="status">READY</span>
+        </div>
+
+        <div class="atm-body">
+          <div class="atm-row">
+            <span class="muted">Devise</span>
+            <strong id="screenCurrency">EUR (€)</strong>
+          </div>
+
+          <div class="atm-row">
+            <span class="muted">Montant</span>
+            <strong id="screenAmount" class="amount">0,00</strong>
+          </div>
+
+          <div id="screenHint" class="hint">
+            Saisis un montant puis valide.
+          </div>
+
+          <div id="atmReceipt" class="receipt" aria-live="polite">
+            <div class="receipt-title">TICKET</div>
+            <div class="receipt-text muted">En attente…</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="atm-controls">
+        <div class="keypad" aria-label="Clavier">
+          <button class="key" data-key="1" type="button">1</button>
+          <button class="key" data-key="2" type="button">2</button>
+          <button class="key" data-key="3" type="button">3</button>
+          <button class="key" data-key="4" type="button">4</button>
+          <button class="key" data-key="5" type="button">5</button>
+          <button class="key" data-key="6" type="button">6</button>
+          <button class="key" data-key="7" type="button">7</button>
+          <button class="key" data-key="8" type="button">8</button>
+          <button class="key" data-key="9" type="button">9</button>
+          <button class="key fn" data-key="dot" type="button">.</button>
+          <button class="key" data-key="0" type="button">0</button>
+          <button class="key fn" data-key="back" type="button">⌫</button>
+        </div>
+
+        <div class="row">
+          <button class="btn primary" id="btnEnter" type="button">Valider</button>
+        </div>
+
+        <div class="slot" aria-label="Fente de distribution">
+          <div class="slot-bar"></div>
+          <span class="muted">Cash</span>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2026 — DAB+ (site fictif pédagogique)</small>
+  </div>
+</footer>
+</body>
+</html>

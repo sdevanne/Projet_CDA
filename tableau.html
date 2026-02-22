@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAB+ — Tableau</title>
+  <meta name="description" content="Historique fictif des opérations et paramètres DAB." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="logo" href="index.html" aria-label="Retour à l'accueil">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">DAB<span class="logo-plus">+</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
+
+      <div id="navlinks" class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="atm.html">ATM</a>
+        <a href="formulaire.html">Formulaire</a>
+        <a href="tableau.html" aria-current="page">Tableau</a>
+        <a href="galerie.html">Galerie</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>Tableau</h1>
+    <p class="muted">Paramètres et historique fictif.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card col-6">
+      <h2>Paramètres DAB+</h2>
+      <ul class="list">
+        <li><strong>Plafond retrait (EUR)</strong> : 1500,00 € / jour</li>
+        <li><strong>Ticket</strong> : affiché après validation</li>
+        <li><strong>Devises</strong> : EUR, USD, GBP, JPY</li>
+        <li><strong>Frais (exemple)</strong> : 0 à 2 selon réseau</li>
+      </ul>
+      <p class="muted" style="margin:10px 0 0;">
+        La simulation ATM respecte le plafond en EUR.
+      </p>
+    </article>
+
+    <article class="card col-6">
+      <h2>Statuts</h2>
+      <ul class="list muted">
+        <li>OK : opération réalisée</li>
+        <li>Refusé : plafond, coupures, ou montant invalide</li>
+      </ul>
+    </article>
+
+    <article class="card col-12">
+      <h2>Historique</h2>
+      <div class="table-wrap" role="region" aria-label="Historique des opérations" tabindex="0">
+        <table>
+          <caption>Opérations (fictif)</caption>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Heure</th>
+              <th>Devise</th>
+              <th>Type</th>
+              <th>Montant</th>
+              <th>Frais</th>
+              <th>Statut</th>
+              <th>Lieu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2026-02-21</td><td>18:12</td><td>EUR</td><td>Retrait</td><td>40,00</td><td>0,00</td><td>OK</td><td>Centre-ville</td></tr>
+            <tr><td>2026-02-20</td><td>09:30</td><td>USD</td><td>Retrait</td><td>120.00</td><td>2.00</td><td>OK</td><td>Airport</td></tr>
+            <tr><td>2026-02-19</td><td>22:05</td><td>EUR</td><td>Retrait</td><td>500,00</td><td>2,00</td><td>Refusé</td><td>Campus</td></tr>
+            <tr><td>2026-02-18</td><td>12:44</td><td>GBP</td><td>Solde</td><td>—</td><td>0,00</td><td>OK</td><td>City Center</td></tr>
+            <tr><td>2026-02-17</td><td>07:58</td><td>JPY</td><td>Retrait</td><td>18670</td><td>110</td><td>OK</td><td>Station</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2026 — DAB+ (site fictif pédagogique)</small>
+  </div>
+</footer>
+</body>
+</html>
